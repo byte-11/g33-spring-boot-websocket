@@ -20,7 +20,7 @@ public class MessageController {
 
     @MessageMapping("/messages}")
     @SendTo("/chat/messages")
-    public ChatMessage receiveAndSendMessages(@Payload ChatMessage message) {
+    public ChatMessage receiveAndForwardMessage(@Payload ChatMessage message) {
         log.info(message.getSender());
         return message;
     }
